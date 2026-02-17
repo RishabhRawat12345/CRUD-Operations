@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import Task from "../models/Task.js";
 
-// Create task (any user)
+
 export const createTask = async (req, res) => {
   try {
     const { title } = req.body;
@@ -16,7 +16,6 @@ export const createTask = async (req, res) => {
   }
 };
 
-// Get tasks for a user
 export const getTasks = async (req, res) => {
   try {
     const userid = new mongoose.Types.ObjectId(req.userId);
@@ -28,7 +27,6 @@ export const getTasks = async (req, res) => {
   }
 };
 
-// Update task (Admin only)
 export const updateTask = async (req, res) => {
   const { editTaskId } = req.params;
 
@@ -53,7 +51,7 @@ export const updateTask = async (req, res) => {
   }
 };
 
-// Delete task (Admin only)
+
 export const deleteTask = async (req, res) => {
   if (req.userRole !== "admin") {
     return res.status(401).json({ message: "User is not admin" });
