@@ -92,9 +92,9 @@ The server will run at `http://localhost:5000`
 | Method | Endpoint                         | Description                  | Body / Params |
 | ------ | -------------------------------- | ---------------------------- | ------------- |
 | POST   | `/api/task/createT`              | Create a new task            | `title`       |
-| GET    | `/api/task/getT`                 | Get tasks for logged-in user | -             |
+| GET    | `/api/task/getT`                 | Get tasks for logged-in user | `editTaskId`  |
 | PUT    | `/api/task/updatedT/:editTaskId` | Update a task (Admin only)   | `title`       |
-| DELETE | `/api/task/deleteT/:id`          | Delete a task (Admin only)   | -             |
+| DELETE | `/api/task/deleteT/:id`          | Delete a task (Admin only)   |  `id`         |
 
 ## Authentication Flow
 
