@@ -134,3 +134,15 @@ The server will run at `http://localhost:5000`
 * JWT token expires in 1 day.
 * Passwords are securely hashed using bcrypt.
 * Make sure your frontend sends cookies with `credentials: 'include'` when making requests.
+
+## Scalability Notes
+
+* Microservices: Each module (auth, tasks) can be separated into microservices to scale independently.
+
+* Caching: Frequently accessed data like tasks can be cached using Redis to reduce database load.
+
+* Load Balancing: Multiple instances of the API can be deployed behind a load balancer (e.g., Nginx, AWS ELB) to handle high traffic.
+
+* Database Scaling: MongoDB can be sharded or replicated to handle increased read/write loads efficiently.
+
+* Queue Management: Background tasks (e.g., sending emails, notifications) can be handled asynchronously using queues like RabbitMQ or Bull.
