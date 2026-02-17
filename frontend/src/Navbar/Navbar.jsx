@@ -6,9 +6,8 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Clear any authentication cookies/session if needed
     toast.success("Logged out successfully");
-    navigate("/"); // Redirect to login page
+    navigate("/"); 
   };
 
   return (
